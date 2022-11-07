@@ -1,0 +1,85 @@
+package danielalves;
+
+import javax.swing.JOptionPane;
+
+public class Computador {
+    
+    private String marca;
+    private String cor;
+    private String modelo;
+    private int serie_num;
+    private float preco;
+            
+            public void calculaValor(){
+                float valor;
+                switch(marca){
+                    case "HP":
+                        valor = (preco / 100) * 30;
+                        preco = preco + valor;
+                        break;
+                                
+                    case "IBM":
+                        valor = (preco / 100) * 50;                               
+                        preco = preco + valor;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            
+            public float alteraValor(float valor){
+                    
+                    if (preco > 0){
+                        this.preco += valor;
+            return 1;
+                    }else{
+            return 0;
+                    }
+            }
+
+    
+    public void imprimir(){
+        JOptionPane.showMessageDialog(null,"\t  ==>>Computador<<==\nMarca > " + marca + "\nCor > " + cor + "\nModelo > " + modelo + "\nNumero de Serie > " + serie_num + "\nPreco >" + preco);
+    }
+    
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public String getCor() {
+        return cor;
+    }
+
+    public void setCor(String cor) {
+        this.cor = cor;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public int getSerie_num() {
+        return serie_num;
+    }
+
+    public void setSerie_num(int serie_num) {
+        this.serie_num = serie_num;
+    }
+
+    public float getPreco() {
+        return preco;
+    }
+
+    public void setPreco(float preco) {
+        this.preco = preco;
+    }
+    
+}
